@@ -13,7 +13,10 @@ class ContactMessageController extends Controller
      */
     public function index()
     {
-        return view('admin.contact.index');
+        $contactMessages = ContactMessage::paginate(6);
+        return view('admin.contact.index',[
+            'contactMessages' => $contactMessages
+        ]);
     }
 
     /**

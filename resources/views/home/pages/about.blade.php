@@ -1,4 +1,4 @@
 @extends("layouts.home")
 @section("content")
-   ABOUT PAGE HERE
+    ABOUT LIST PAGE
 @endsection

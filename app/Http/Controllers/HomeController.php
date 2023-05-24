@@ -25,5 +25,12 @@ class HomeController extends Controller
     {
         return view("home.pages.about");
     }
-
+    public function properties()
+    {
+        return view("home.pages.properties");
+    }
+    public function references()
+    {
+        return view("home.pages.references");
+    }
 }

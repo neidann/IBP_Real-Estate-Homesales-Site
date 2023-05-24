@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Settings;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
-class SettingsController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.settings.index');
+        return view("admin.slider.index");
     }
 
     /**
@@ -21,7 +21,7 @@ class SettingsController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.slider.create");
     }
 
     /**
@@ -35,7 +35,7 @@ class SettingsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Settings $settings)
+    public function show(Slider $slider)
     {
         //
     }
@@ -43,15 +43,15 @@ class SettingsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Settings $settings)
+    public function edit(Slider $slider)
     {
-        return view('admin.settings.edit');
+        return view("admin.slider.edit");
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Settings $settings)
+    public function update(Request $request, Slider $slider)
     {
         //
     }
@@ -59,8 +59,10 @@ class SettingsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Settings $settings)
+    public function destroy(Request $req, $id)
     {
-        //
+        $item = Slider::find($id);
+        $item->delete();
+        return redirect()->back()->with("Slider","Announcement Deleted!");
     }
 }

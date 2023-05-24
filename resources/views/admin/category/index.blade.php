@@ -1,6 +1,5 @@
 @extends("layouts.admin")
 @section("content")
-    <div class="container-fluid">
         <div class="row">
             <div class="col-md-1 m-3">
                 <a href="{{route('admin.category.create')}}" type="button" class="btn btn-block bg-gradient-primary btn-sm">Create Category</a>
@@ -47,14 +46,11 @@
                 @endforeach
                 </tbody>
             </table>
-
-
         </div>
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center">
                 {{ $categories->links() }}
             </div>
         </div>
-    </div>
 
 @endsection

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePropertyGalleryRequest;
 use App\Models\Property;
 use App\Models\PropertyGallery;
-use App\Http\Requests\StorePropertyGalleryRequest;
-use App\Http\Requests\UpdatePropertyGalleryRequest;
 
 class PropertyGalleryController extends Controller
 {

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,10 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        return view("admin.announcement.index");
+        $announcements = Announcement::paginate(6);
+        return view("admin.announcement.index",[
+            'announcements' => $announcements
+        ]);
     }
 
     /**
