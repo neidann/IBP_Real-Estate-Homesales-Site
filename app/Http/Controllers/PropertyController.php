@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Property;
 use App\Http\Requests\StorePropertyRequest;
 use App\Http\Requests\UpdatePropertyRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
@@ -14,7 +16,10 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        return view('admin.property.index');
+        $propertyList = Property::paginate(8);
+        return view('admin.property.index',[
+            'propertyList' => $propertyList
+        ]);
     }
 
     /**
@@ -22,7 +27,10 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('admin.property.create');
+        $categories = Category::all();
+        return view('admin.property.create',[
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -30,15 +38,41 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $property = new Property();
+        $property->user_id = Auth::user()->id;
+        $property->category_id = $request->category;
+        $property->title = $request->title;
+        $property->description = $request->description;
+        $property->img_text = $request->image_text;
+        $property->sqft = $request->sqft;
+        $property->position = $request->position;
+        $property->sittingrooms = $request->sitting_rooms;
+        $property->bedrooms = $request->bedrooms;
+        $property->baths = $request->baths;
+        $property->status = $request->status;
+        $property->high_price = $request->high_price;
+        $property->low_price = $request->low_price;
+        $property->age = $request->age;
+        $property->address = $request->address;
+
+        if ($request->hasFile('card_image')) {
+            $image = $request->file('card_image');
+            $imagePath = $image->store("public/property_images");
+            $property->card_img = $imagePath;
+        }
+        $property->save();
+        return redirect()->route("admin.property.index")->with("success","CREATED GRACEFULLY!");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Property $property)
+    public function show($id)
     {
-        //
+        $property = Property::find($id);
+        return view('admin.property.show',[
+            'property' => $property
+        ]);
     }
 
     /**
@@ -47,15 +81,42 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $property = Property::find($id);
-        return view('admin.property.edit');
+        $categories = Category::all();
+        return view('admin.property.edit',[
+            'property' => $property,
+            'categories' => $categories
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, property $property)
+    public function update(Request $request,$id)
     {
-        //
+        $property = Property::find($id);
+        $property->user_id = Auth::user()->id;
+        $property->category_id = $request->category;
+        $property->title = $request->title;
+        $property->description = $request->description;
+        $property->img_text = $request->img_text;
+        $property->sqft = $request->sqft;
+        $property->position = $request->position;
+        $property->sittingrooms = $request->sittingrooms;
+        $property->bedrooms = $request->bedrooms;
+        $property->baths = $request->baths;
+        $property->status = $request->status;
+        $property->high_price = $request->high_price;
+        $property->low_price = $request->low_price;
+        $property->age = $request->age;
+        $property->address = $request->address;
+
+        if ($request->hasFile('card_image')) {
+            $image = $request->file('card_image');
+            $imagePath = $image->store("public/property_images");
+            $property->card_img = $imagePath;
+        }
+        $property->save();
+        return redirect()->route("admin.property.index")->with("success","Updated GRACEFULLY!");
     }
 
     /**
@@ -65,6 +126,6 @@ class PropertyController extends Controller
     {
         $item = Property::find($id);
         $item->delete();
-        return redirect()->back()->with("success","Message Deleted!");
+        return redirect()->route('admin.property.index')->with("success","Message Deleted!");
     }
 }

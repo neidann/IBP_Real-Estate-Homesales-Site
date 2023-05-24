@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->foreignId("user_id")->references("id")->on("users");
             $table->foreignId("category_id")->references("id")->on("categories");
-            $table->string("text");
-            $table->string("description");
+            $table->string("title");
+            $table->longText("description");
             $table->string("card_img");
             $table->string("img_text");
             $table->string("sqft");//metrekare
