@@ -20,6 +20,7 @@ Route::name("home.")->group(function (){
         Route::get("/contact",[HomeController::class,"contact"])->name("contact");
         Route::get("/about",[HomeController::class,"about"])->name("about");
         Route::get("/references",[HomeController::class,"references"])->name("references");
+        Route::get("/c/{id}/{slug}",[HomeController::class,"category_property"])->name("category.property");
 });
 
 # Admin Dashboard Routes

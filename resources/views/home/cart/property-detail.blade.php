@@ -1,4 +1,5 @@
 @extends("layouts.home")
 @section("content")
-   PRODUCT LIST PAGE
+    PROPERTY DETAIL
+
 @endsection

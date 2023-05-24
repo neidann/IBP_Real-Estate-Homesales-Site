@@ -42,7 +42,7 @@ class PropertyController extends Controller
         $property->category_id = $request->category;
         $property->title = $request->title;
         $property->description = $request->description;
-        $property->img_text = $request->image_text;
+        $property->img_text = $request->img_text;
         $property->sqft = $request->sqft;
         $property->position = $request->position;
         $property->sittingrooms = $request->sitting_rooms;

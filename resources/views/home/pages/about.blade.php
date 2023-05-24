@@ -1,4 +1,4 @@
 @extends("layouts.home")
 @section("content")
-    ABOUT LIST PAGE
+    {!! $settings->about_page !!}
 @endsection

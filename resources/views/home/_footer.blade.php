@@ -24,10 +24,9 @@
                 <div class="footer-widget">
                     <h5>Information</h5>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Serivius</a></li>
+                        <li><a href="{{route('home.about')}}">About Us</a></li>
+                        <li><a href="{{route('home.contact')}}">Contact</a></li>
+                        <li><a href="{{route('home.references')}}">References</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +59,7 @@
                 <div class="col-lg-12">
                     <div class="copyright-text">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Real Estate Agency <i class="fa fa-heart-o" aria-hidden="true"></i>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                     <div class="payment-pic">

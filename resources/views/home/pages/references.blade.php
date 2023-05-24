@@ -1,4 +1,4 @@
 @extends("layouts.home")
 @section("content")
-    REFERENCES LIST PAGE
+    {!! $settings->references_page !!}
 @endsection

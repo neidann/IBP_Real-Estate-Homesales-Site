@@ -5,20 +5,20 @@
             <div class="ht-left">
                 <div class="mail-service">
                     <i class=" fa fa-envelope"></i>
-                    hello.colorlib@gmail.com
+                    real.estate.agency@gmail.com
                 </div>
                 <div class="phone-service">
                     <i class=" fa fa-phone"></i>
-                    +65 11.188.888
+                    +90 551 111 11 11
                 </div>
             </div>
             <div class="ht-right">
                 <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
                 <div class="lan-selector">
                     <select class="language_drop" name="countries" id="countries" style="width:300px;">
-                        <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
+                        <option value='yt' data-image="{{asset('home')}}/img/flag-1.jpg" data-imagecss="flag yt"
                                 data-title="English">English</option>
-                        <option value='yu' data-image="img/flag-2.jpg" data-imagecss="flag yu"
+                        <option value='yu' data-image="{{asset('home')}}/img/flag-2.jpg" data-imagecss="flag yu"
                                 data-title="Bangladesh">German </option>
                     </select>
                 </div>
@@ -36,8 +36,8 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2">
                     <div class="logo">
-                        <a href="./index.html">
-                            <img src="img/logo.png" alt="">
+                        <a href="{{route('home.index')}}">
+                            <img src="{{asset('home')}}/img/logo.png" alt="{{$settings->description}}" >
                         </a>
                     </div>
                 </div>
