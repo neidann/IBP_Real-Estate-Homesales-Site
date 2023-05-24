@@ -15,6 +15,7 @@
                     <th>Category</th>
                     <th>Title</th>
                     <th>Card Image</th>
+                    <th>Image Gallery</th>
                     <th>Status</th>
                     <th>Address</th>
                     <th>Age</th>
@@ -31,6 +32,11 @@
                         <td>{{ $property->title }}</td>
                         <td>
                             <img src="{{ Storage::url($property->card_img) }}" width="100" alt="" />
+                        </td>
+                        <td class="text-center">
+                            <a href="{{ route('admin.property.gallery.index', ['id' => $property->id]) }}" class="btn btn-primary">
+                                <i class="fas fa-image fa-3x"></i>
+                            </a>
                         </td>
                         <td>{{ $property->status }}</td>
                         <td>{{ $property->address }}</td>

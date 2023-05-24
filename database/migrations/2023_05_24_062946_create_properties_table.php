@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string("low_price");
             $table->text("address");
             $table->integer("age")->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,4 +15,8 @@ class Property extends Model
     public function category(){
         return $this->belongsTo(Category::class,"category_id","id");
     }
+
+    public function gallery(){
+        return $this->hasMany(PropertyGallery::class,"property_id","id");
+    }
 }

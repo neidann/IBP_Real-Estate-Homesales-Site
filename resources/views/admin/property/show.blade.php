@@ -29,6 +29,14 @@
                         <td>{{ $property->slug }}</td>
                     </tr>
                     <tr>
+                        <th>Image Gallery</th>
+                        <td>
+                            @foreach($property->gallery as $img)
+                                <img src="{{ Storage::url($img->image) }}" alt="Property Image" width="200">
+                            @endforeach
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Status</th>
                         <td>{{ $property->status }}</td>
                     </tr>

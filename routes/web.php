@@ -8,6 +8,7 @@ use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\PropertyGalleryController;
 use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,12 @@ Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
             Route::get("/edit/{id}","edit")->name("edit");
             Route::put("/update/{id}","update")->name("update");
             Route::delete("/delete/{id}","destroy")->name("destroy");
+
+            Route::prefix("/image")->name("gallery.")->controller(PropertyGalleryController::class)->group(function(){
+                Route::get("/{id}","index")->name("index");
+                Route::post("/store/{id}","store")->name("store");
+                Route::delete("/destroy/{id}","destroy")->name("destroy");
+            });
         });
         Route::prefix("/slider")->name("slider.")->controller(SliderController::class)->group(function(){
             Route::get("/","index")->name("index");
