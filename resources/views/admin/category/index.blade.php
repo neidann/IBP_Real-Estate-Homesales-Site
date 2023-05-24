@@ -35,12 +35,25 @@
                         <td>
                             <a href="{{route('admin.category.show',['id' => $category->id])}}" class="btn btn-primary">  <i class="fas fa-eye"></i></a>
                             <a href="{{route('admin.category.edit',['id' => $category->id])}}" class="btn btn-info"> <i class="fas fa-edit"></i> </a>
-                            <a href="{{route('admin.category.destroy',['id' => $category->id])}}" class="btn btn-danger"> <i class="nav-icon fas fa-trash"></i></a>
+                            <form action="{{ route('admin.category.destroy', ['id' => $category->id]) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this category?')">
+                                    <i class="nav-icon fas fa-trash"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+
+
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                {{ $categories->links() }}
+            </div>
         </div>
     </div>
 

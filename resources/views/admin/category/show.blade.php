@@ -12,11 +12,14 @@
         </tr>
         <tr>
             <th>Description</th>
-            <td>{{ $category->description }}</td>
+            <td>
+                <img src="{{Storage::url($category->image)}}" width="400"  alt="" />
+            </td>
         </tr>
         <tr>
             <th>Image</th>
-            <td>{{ $category->image }}</td>
+            <td>
+                {{ $category->image }}</td>
         </tr>
         <tr>
             <th>Slug</th>
@@ -36,9 +39,14 @@
                 <a href="{{ route('admin.category.edit', ['id' => $category->id]) }}" class="btn btn-info">
                     <i class="fas fa-edit"></i>
                 </a>
-                <a href="{{ route('admin.category.destroy', ['id' => $category->id]) }}" class="btn btn-danger">
-                    <i class="nav-icon fas fa-trash"></i>
-                </a>
+                <form action="{{ route('admin.category.destroy', ['id' => $category->id]) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this category?')">
+                        <i class="nav-icon fas fa-trash"></i>
+                    </button>
+                </form>
+
             </td>
         </tr>
         </tbody>

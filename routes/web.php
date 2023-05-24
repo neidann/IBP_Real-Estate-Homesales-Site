@@ -32,8 +32,8 @@ Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
            Route::get("/show/{id}","show")->name("show");
            Route::post("/store","store")->name("store");
            Route::get("/edit/{id}","edit")->name("edit");
-           Route::post("/update/{id}","update")->name("update");
-           Route::post("/delete/{id}","destroy")->name("destroy");
+           Route::put("/update/{id}","update")->name("update");
+           Route::delete("/delete/{id}","destroy")->name("destroy");
         });
         Route::prefix("/property")->name("property.")->controller(PropertyController::class)->group(function(){
             Route::get("/","index")->name("index");

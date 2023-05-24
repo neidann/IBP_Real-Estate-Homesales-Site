@@ -72,24 +72,46 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('admin.category.edit');
+        return view('admin.category.edit',[
+            'category' => $category
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        // Validate the form data
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'slug' => 'required',
+            'status' => 'required',
+        ]);
+
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->description = $request->description;
+        $category->slug = $request->slug;
+        $category->status = $request->status;
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->store("public/category_images");
+            $category->image = $imagePath;
+        }
+        $category->save();
+        return redirect()->back()->with("success","Updated gracefully!");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $req, $id)
+    public function destroy($id)
     {
         $item = Category::find($id);
         $item->delete();
-        return redirect()->back()->with("success","Message Deleted!");
+        return redirect()->route('admin.category.index')->with("success","DELETED GRACEFULLY!");
     }
 }

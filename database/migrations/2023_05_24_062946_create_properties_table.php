@@ -12,7 +12,23 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('properties', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->foreignId("user_id")->references("id")->on("users");
+            $table->foreignId("category_id")->references("id")->on("categories");
+            $table->string("text");
+            $table->string("description");
+            $table->string("card_img");
+            $table->string("img_text");
+            $table->string("sqft");//metrekare
+            $table->longText("position");
+            $table->integer("sittingrooms");
+            $table->integer("bedrooms");
+            $table->integer("baths");
+            $table->enum("status",["ACTIVE","SOLD","INACTIVE"]);
+            $table->string("high_price");
+            $table->string("low_price");
+            $table->text("address");
+            $table->integer("age")->default(0);
             $table->timestamps();
         });
     }
