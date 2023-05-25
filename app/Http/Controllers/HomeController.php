@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\ContactMessage;
 use App\Models\Property;
 use App\Models\Settings;
 use Illuminate\Http\Request;
@@ -67,4 +68,17 @@ class HomeController extends Controller
             'properties' => $properties
         ]);
     }
+
+    public function contact_message(Request $req){
+
+       $message = new ContactMessage();
+       $message->text = $req->message;
+       $message->subject = $req->subject;
+       $message->ip = request()->ip();
+       $message->email = $req->email;
+       $message->phone = $req->phone;
+       $message->save();
+       return redirect()->back()->with("success","Message has been send gracefully!");
+    }
+
 }

@@ -34,9 +34,6 @@ class AdminController extends Controller
         $settings->company_name = "Real Estate Agency";
         $settings->description = "Welcome to Real Estate Agency, your trusted partner in the world of real estate. We are a leading agency dedicated to helping individuals, families, and businesses find their perfect property solutions.";
         $settings->logo="no_img";
-        $settings->contact_page = "<h1> hello from contact page </h1>";
-        $settings->references_page = "<h1> hello from references page </h1>";
-        $settings->about_page = "<h1> hello from about page </h1> ";
         $settings->save();
         return view('admin.settings.index',[
             'settings'=>null

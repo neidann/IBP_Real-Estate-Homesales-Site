@@ -18,6 +18,7 @@ Route::name("home.")->group(function (){
         Route::get("/",[HomeController::class,"index"])->name("index");
         Route::get("/properties",[HomeController::class,"properties"])->name("properties");
         Route::get("/contact",[HomeController::class,"contact"])->name("contact");
+        Route::post("/contact",[HomeController::class,"contact_message"])->name("contact_message");
         Route::get("/about",[HomeController::class,"about"])->name("about");
         Route::get("/references",[HomeController::class,"references"])->name("references");
         Route::get("/c/{id}/{slug}",[HomeController::class,"category_property"])->name("category.property");
@@ -77,13 +78,13 @@ Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
             Route::get("/","index")->name("index");
             Route::get("/show/{id}","show")->name("show");
             Route::post("/update/{id}","update")->name("update");
-            Route::post("/delete/{id}","destroy")->name("destroy");
+            Route::delete("/delete/{id}","destroy")->name("destroy");
         });
         Route::prefix("/users")->name("user.")->controller(UserController::class)->group(function(){
             Route::get("/","index")->name("index");
             Route::get("/edit/{id}","edit")->name("edit");
             Route::post("/update/{id}","update")->name("update");
-            Route::post("/delete/{id}","destroy")->name("destroy");
+            Route::delete("/delete/{id}","destroy")->name("destroy");
         });
 });
 

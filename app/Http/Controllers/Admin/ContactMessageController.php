@@ -13,50 +13,34 @@ class ContactMessageController extends Controller
      */
     public function index()
     {
-        $contactMessages = ContactMessage::paginate(6);
+        $contactMessages = ContactMessage::orderBy('status')->paginate(6);
         return view('admin.contact.index',[
             'contactMessages' => $contactMessages
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
      */
-    public function show(ContactMessage $contactMessage)
+    public function show($id)
     {
-        //
+        $message = ContactMessage::find($id);
+        return view('admin.contact.show',[
+            'message' => $message
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ContactMessage $contactMessage)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ContactMessage $contactMessage)
+    public function update(Request $request, $id)
     {
-        //
+        $message = ContactMessage::find($id);
+        $message->status = $request->status;
+        $message->save();
+        return redirect()->back()->with("success","Updated successfully!");
     }
 
     /**
@@ -66,6 +50,6 @@ class ContactMessageController extends Controller
     {
         $item = ContactMessage::find($id);
         $item->delete();
-        return redirect()->back()->with("success","Message Deleted!");
+        return redirect()->route('admin.contact.index')->with("success","Message Deleted!");
     }
 }

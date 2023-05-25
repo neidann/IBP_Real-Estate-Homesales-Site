@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string("company_name");
             $table->string("description");
             $table->string("logo");
-            $table->longText("contact_page");
-            $table->longText("references_page");
-            $table->longText("about_page");
+            $table->string("address");
+            $table->string("email");
+            $table->string("phone");
             $table->softDeletes();
             $table->timestamps();
         });

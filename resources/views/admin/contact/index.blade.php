@@ -15,7 +15,7 @@
             </thead>
             <tbody>
             @foreach($contactMessages as $contact)
-                <tr>
+                <tr @if($contact->status==="CHECKED") class="text-green" @endif>
                     <td>{{ $contact->id }}</td>
                     <td>{{ $contact->subject }}</td>
                     <td>{{ $contact->email }}</td>

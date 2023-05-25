@@ -19,9 +19,9 @@ class SettingSeeder extends Seeder
                 'company_name' => "Real Estate Agency",
                 "description" => "Welcome to Real Estate Agency, your trusted partner in the world of real estate. We are a leading agency dedicated to helping individuals, families, and businesses find their perfect property solutions.",
                 "logo" => "no_image",
-                "contact_page" => "<h1>HELLO FROM CONTACT PAGE</h1>",
-                "about_page" => "<h1>HELLO FROM ABOUT PAGE</h1>",
-                "references_page" => "<h1>HELLO FROM REFERENCES PAGE</h1>",
+                "address" => "60-49 Road 11378 New York",
+                "email" => "+65 11.188.888",
+                "phone" => "hello.colorlib@gmail.com"
             ]);
         }
     }
