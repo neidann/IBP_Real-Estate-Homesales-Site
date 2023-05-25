@@ -25,7 +25,7 @@ Route::name("home.")->group(function (){
 });
 
 # Admin Dashboard Routes
-Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
+Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(function(){
         Route::get("/",[AdminController::class,"index"])->name("dashboard");
         Route::prefix("/settings")->controller(AdminController::class)->name("settings.")->group(function(){
             Route::get("/","settings")->name("index");

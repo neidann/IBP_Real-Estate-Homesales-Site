@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Category;
+use App\Models\Settings;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,13 +14,20 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
+
+    public $settings;
+    public $categories;
+
+    public function __construct(){
+        $this->settings = Settings::first();
+        $this->categories = Category::all();
+    }
     public function edit(Request $request): View
     {
         return view('profile.edit', [
             'user' => $request->user(),
+            'settings' => $this->settings,
+            'categories' => $this->categories
         ]);
     }
 

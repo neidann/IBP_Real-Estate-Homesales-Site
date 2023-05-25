@@ -1,8 +1,3 @@
-[COMPLETED] -> Contact Page Ayarlanacak
-[COMPLETED] -> References Page Ayarlanacak
-[COMPLETED] -> About Page Ayarlanacak
-[COMPLETED] -> Category Listesi Sayfası Oluşturulacak
-
 [] -> Authorization Basics
 [] -> Settings Update
     [] -> Addres, telefon, email vs. eklenecek
@@ -28,5 +23,5 @@
 [] -> Announcements Tamamlanacak
 
 
-* [] -> Site Dili Türkçe Yapılacak
+* [] -> Site Dili İngilizce Yapılacak
 
