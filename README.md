@@ -1,4 +1,5 @@
 
+[] -> Ürün Detay Sayfası
 [] -> Sepete Ekleme
 [] -> Sepetteyken Silme, Miktar arttırma 
 [] -> Ödeme Yapa tıkladıktan sonra gidilecek Address Sayfası
@@ -7,7 +8,7 @@
 [] -> Profil Yönetimi
     [] -> Sipariş Takip
     [] -> Profil Resmi
-    [] -> Şifre Değiştirme
+    [COMPLETED] -> Şifre Değiştirme
 
 
 ### ADMIN
@@ -17,7 +18,7 @@
 [] -> Contact Messages Yönetimi Tamamlanacak
 [] -> Settings Yönetimi Tamamlanacak
 [] -> Announcements Tamamlanacak
-
+[] -> User Management
 
 * [] -> Site Dili İngilizce Yapılacak
 

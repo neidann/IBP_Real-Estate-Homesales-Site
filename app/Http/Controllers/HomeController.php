@@ -18,53 +18,37 @@ class HomeController extends Controller
    }
     public function index()
     {
-        return view("home.index",[
-            'settings' => $this->settings,
-            'categories' => $this->categories,
-        ]);
+        return view("home.index");
     }
 
 
     public function contact()
     {
-        return view("home.pages.contact",[
-            'settings' => $this->settings,
-            'categories' => $this->categories,
-        ]);
+        return view("home.pages.contact");
     }
 
 
     public function about()
     {
-        return view("home.pages.about",[
-            'settings' => $this->settings,
-            'categories' => $this->categories,
-        ]);
+        return view("home.pages.about");
     }
     public function properties()
     {
         $properties = Property::paginate(6);
         return view("home.cart.property-list",[
-            'settings' => $this->settings,
-            'categories' => $this->categories,
             'properties' => $properties,
             'ispaginated' => true
         ]);
     }
     public function references()
     {
-        return view("home.pages.references",[
-            'settings' => $this->settings,
-            'categories' => $this->categories,
-        ]);
+        return view("home.pages.references");
     }
 
     public function category_property($id, $slug){
 
         $properties = Category::find($id)->properties;
         return view("home.cart.property-list",[
-            'settings' => $this->settings,
-            'categories' => $this->categories,
             'properties' => $properties
         ]);
     }
