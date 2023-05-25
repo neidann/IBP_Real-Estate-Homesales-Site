@@ -27,23 +27,23 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="contact_page">Contact Page</label>
-                    <textarea name="contact_page" id="contact_page" class="form-control" rows="4">{{ $settings->contact_page }}</textarea>
-                    @error('contact_page')
+                    <label for="email">Email</label>
+                    <textarea name="email" id="email" class="form-control" rows="4">{{ $settings->email }}</textarea>
+                    @error('email')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="references_page">References Page</label>
-                    <textarea name="references_page" id="references_page" class="form-control" rows="4">{{ $settings->references_page }}</textarea>
-                    @error('references_page')
+                    <label for="phone">Phone</label>
+                    <textarea name="phone" id="phone" class="form-control" rows="4">{{ $settings->phone }}</textarea>
+                    @error('phone')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="about_page">About Page</label>
-                    <textarea name="about_page" id="about_page" class="form-control" rows="4">{{ $settings->about_page }}</textarea>
-                    @error('about_page')
+                    <label for="address">Address</label>
+                    <textarea name="address" id="address" class="form-control" rows="4">{{ $settings->address }}</textarea>
+                    @error('address')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>

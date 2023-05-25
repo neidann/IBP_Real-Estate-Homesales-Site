@@ -36,15 +36,28 @@ class AdminController extends Controller
         $settings->logo="no_img";
         $settings->save();
         return view('admin.settings.index',[
-            'settings'=>null
+            'settings' => null
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $req)
     {
+        $settings = Settings::first();
+        $settings->company_name = $req->company_name;
+        $settings->description = $req->description;
+        if ($req->hasFile('logo')) {
+            $image = $req->file('logo');
+            $imagePath = $image->store("public/logo");
+            $settings->image = $imagePath;
+        }
+        $settings->address = $req->address;
+        $settings->email = $req->email;
+        $settings->phone = $req->phone;
+        $settings->save();
+
        return redirect()->route("admin.settings.index")->with("success","Updated successfully!");
     }
 

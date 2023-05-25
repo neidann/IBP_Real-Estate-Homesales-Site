@@ -1,7 +1,3 @@
-[] -> Authorization Basics
-[] -> Settings Update
-    [] -> Addres, telefon, email vs. eklenecek
-    [] -> bootstrap modali kullanılacak #admin
 
 [] -> Sepete Ekleme
 [] -> Sepetteyken Silme, Miktar arttırma 
