@@ -8,9 +8,9 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
-                            <li><a href="#">Men</a></li>
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Kids</a></li>
+                            @foreach($categories as $category)
+                            <li><a href="#">{{$category->title}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="filter-widget">
@@ -160,18 +160,17 @@
                                             <ul>
                                                 <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a>
                                                 </li>
-                                                <li class="quick-view"><a href="#">+ Quick View</a></li>
+                                                <li class="quick-view"><a href="{{route('home.properties_detail',['id' => $property->id])}}">+ Quick View</a></li>
                                                 <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                                             </ul>
                                         </div>
                                         <div class="pi-text">
-                                            <div class="catagory-name">Towel</div>
+                                            <div class="catagory-name">{{$property->category->title}}</div>
                                             <a href="#">
                                                 <h5>{{$property->title}}</h5>
                                             </a>
                                             <div class="product-price">
-                                                $14.00
-                                                <span>$35.00</span>
+                                                {{$property->low_price}} ₺ <span>{{$property->high_price}}</span>
                                             </div>
                                         </div>
                                     </div>

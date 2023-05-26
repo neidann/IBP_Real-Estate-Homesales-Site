@@ -12,10 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carts', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
+            $table->foreignId('user_id')->references("id")->on("users");
+            $table->foreignId("property_id")->references("id")->on("properties");
             $table->timestamps();
         });
     }
+    /*
+     * user:1 property:1
+     * user:1 property:2
+     * user:1 property:3
+     * */
 
     /**
      * Reverse the migrations.

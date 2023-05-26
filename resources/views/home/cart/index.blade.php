@@ -12,60 +12,20 @@
                                 <th>Image</th>
                                 <th class="p-name">Product Name</th>
                                 <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
                                 <th><i class="ti-close"></i></th>
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($cartItems as $cart)
                             <tr>
-                                <td class="cart-pic first-row"><img src="img/cart-page/product-1.jpg" alt=""></td>
+                                <td class="cart-pic first-row"><img src="{{Storage::url($cart->property->card_img)}}" alt=""></td>
                                 <td class="cart-title first-row">
-                                    <h5>Pure Pineapple</h5>
+                                    <h5>{{$cart->property->title}}</h5>
                                 </td>
-                                <td class="p-price first-row">$60.00</td>
-                                <td class="qua-col first-row">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="total-price first-row">$60.00</td>
+                                <td class="p-price first-row">{{$cart->property->low_price}}₺</td>
                                 <td class="close-td first-row"><i class="ti-close"></i></td>
                             </tr>
-                            <tr>
-                                <td class="cart-pic"><img src="img/cart-page/product-2.jpg" alt=""></td>
-                                <td class="cart-title">
-                                    <h5>American lobster</h5>
-                                </td>
-                                <td class="p-price">$60.00</td>
-                                <td class="qua-col">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="total-price">$60.00</td>
-                                <td class="close-td"><i class="ti-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="cart-pic"><img src="img/cart-page/product-3.jpg" alt=""></td>
-                                <td class="cart-title">
-                                    <h5>Guangzhou sweater</h5>
-                                </td>
-                                <td class="p-price">$60.00</td>
-                                <td class="qua-col">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="total-price">$60.00</td>
-                                <td class="close-td"><i class="ti-close"></i></td>
-                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -86,8 +46,8 @@
                         <div class="col-lg-4 offset-lg-4">
                             <div class="proceed-checkout">
                                 <ul>
-                                    <li class="subtotal">Subtotal <span>$240.00</span></li>
-                                    <li class="cart-total">Total <span>$240.00</span></li>
+                                    <li class="subtotal">Subtotal <span>{{$totalPrice}}₺</span></li>
+                                    <li class="cart-total">Total with Tax <span>{{$totalPriceWithTax}}₺</span></li>
                                 </ul>
                                 <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
                             </div>

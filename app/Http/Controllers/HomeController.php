@@ -10,12 +10,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-   public $settings;
-   public $categories;
-   public function __construct(){
-       $this->settings = Settings::first();
-       $this->categories = Category::all();
-   }
+
+
     public function index()
     {
         return view("home.index");
@@ -32,13 +28,21 @@ class HomeController extends Controller
     {
         return view("home.pages.about");
     }
-    public function properties()
-    {
+    public function properties() {
+
         $properties = Property::paginate(6);
         return view("home.cart.property-list",[
             'properties' => $properties,
             'ispaginated' => true
         ]);
+    }
+
+    public function properties_detail($id){
+
+       $property = Property::find($id);
+       return view('home.cart.property-detail',[
+           'property' => $property
+       ]);
     }
     public function references()
     {

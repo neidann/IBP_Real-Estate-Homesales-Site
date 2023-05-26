@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::name("home.")->group(function (){
         Route::get("/",[HomeController::class,"index"])->name("index");
         Route::get("/properties",[HomeController::class,"properties"])->name("properties");
+        Route::get("/properties/detail/{id}",[HomeController::class,"properties_detail"])->name("properties_detail");
         Route::get("/contact",[HomeController::class,"contact"])->name("contact");
         Route::post("/contact",[HomeController::class,"contact_message"])->name("contact_message");
         Route::get("/about",[HomeController::class,"about"])->name("about");
@@ -92,6 +93,7 @@ Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(fun
 # User Routes - IF logged in
 Route::middleware('auth')->group(function () {
     Route::get("/cart",[CartController::class,"index"])->name("cart.index");
+    Route::post("/add/cart",[CartController::class,"cart_store"])->name("cart.store");
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
