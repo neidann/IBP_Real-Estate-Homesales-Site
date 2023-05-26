@@ -91,9 +91,13 @@ Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(fun
 });
 
 # User Routes - IF logged in
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','cart'])->group(function () {
     Route::get("/cart",[CartController::class,"index"])->name("cart.index");
-    Route::post("/add/cart",[CartController::class,"cart_store"])->name("cart.store");
+    Route::get("/cart/checkout",[CartController::class,"checkout"])->name("cart.checkout");
+    Route::get("/cart/checkout/completed",[CartController::class,"checkout_completed"])->name("cart.checkout.completed");
+    Route::post("/cart/add",[CartController::class,"cart_store"])->name("cart.store");
+    Route::delete("/cart/delete",[CartController::class,"cart_delete"])->name("cart.delete");
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

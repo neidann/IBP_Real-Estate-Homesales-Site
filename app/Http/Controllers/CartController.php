@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\Cart;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
@@ -31,12 +32,17 @@ class CartController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    public function checkout()
     {
-        //
+
+
+        return view('home.cart.checkout');
+    }
+
+    public function address_store()
+    {
+        return view('home.cart.address');
     }
 
     /**
@@ -53,10 +59,8 @@ class CartController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Cart $cart)
+
+    public function checkout_address()
     {
         //
     }
@@ -80,8 +84,10 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cart $cart)
+    public function cart_delete(Request $req)
     {
-        //
+        $cartItem = Cart::find($req->cart_item_id);
+        $cartItem->delete();
+        return redirect()->back()->with("success","Item deleted successfully!");
     }
 }

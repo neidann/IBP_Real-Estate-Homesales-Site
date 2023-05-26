@@ -23,7 +23,14 @@
                                     <h5>{{$cart->property->title}}</h5>
                                 </td>
                                 <td class="p-price first-row">{{$cart->property->low_price}}₺</td>
-                                <td class="close-td first-row"><i class="ti-close"></i></td>
+                                <td class="close-td first-row">
+                                    <form action="{{route('cart.delete')}}" method="post">
+                                        @csrf
+                                        @method("DELETE")
+                                        <input type="hidden" name="cart_item_id" value="{{$cart->id}}" />
+                                        <button class="btn btn-warning" type="submit"><i class="ti-close"></i></button>
+                                    </form>
+                                  </td>
                             </tr>
                             @endforeach
                             </tbody>
@@ -49,7 +56,7 @@
                                     <li class="subtotal">Subtotal <span>{{$totalPrice}}₺</span></li>
                                     <li class="cart-total">Total with Tax <span>{{$totalPriceWithTax}}₺</span></li>
                                 </ul>
-                                <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
+                                <a href="{{route('cart.checkout')}}" class="proceed-btn">PROCEED TO CHECK OUT</a>
                             </div>
                         </div>
                     </div>

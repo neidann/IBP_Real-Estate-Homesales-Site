@@ -1,15 +1,12 @@
-
-[] -> Ürün Detay Sayfası
-[] -> Sepete Ekleme
-[] -> Sepetteyken Silme, Miktar arttırma 
 [] -> Ödeme Yapa tıkladıktan sonra gidilecek Address Sayfası
 [] -> Cart Bilgilerini Girme 
 [] -> Onaylanma Durumu
 [] -> Profil Yönetimi
     [] -> Sipariş Takip
     [] -> Profil Resmi
-    [COMPLETED] -> Şifre Değiştirme
 
+[] -> Home Sayfasında Slider CRUD Eklenecek
+[] -> Home Sayfasına Ürünler Getirilecek
 
 ### ADMIN
 [] -> Dashboard Düzenleme & İstatistikleri Getirme

@@ -13,8 +13,12 @@
                 </div>
             </div>
             <div class="ht-right">
-                <a href="{{route('login')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Login</a>
-                <a href="{{route('register')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Register</a>
+                @auth
+                    <a href="{{route('profile.edit')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Profile</a>
+                @else
+                    <a href="{{route('login')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Login</a>
+                    <a href="{{route('register')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Register</a>
+                @endauth
                 <div class="lan-selector">
                     <select class="language_drop" name="countries" id="countries" style="width:300px;">
                         <option value='yt' data-image="{{asset('home')}}/img/flag-1.jpg" data-imagecss="flag yt"
@@ -60,7 +64,7 @@
                             </a>
                         </li>
                         <li class="cart-icon">
-                            <a href="#">
+                            <a href="{{route('cart.index')}}">
                                 <i class="icon_bag_alt"></i>
                                 <span>3</span>
                             </a>
