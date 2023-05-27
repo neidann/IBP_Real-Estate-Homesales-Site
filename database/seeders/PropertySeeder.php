@@ -19,7 +19,7 @@ class PropertySeeder extends Seeder
                 'category_id' => 1, // Replace with the desired category ID
                 'title' => 'Property ' . $i,
                 'description' => 'Description for Property ' . $i,
-                'card_img' => 'property' . $i . '.jpg', // Replace with the desired image name
+                'card_img' => "public/property_images/g2.png", // Replace with the desired image name
                 'img_text' => 'Image text for Property ' . $i,
                 'sqft' => '1000', // Replace with the desired square footage
                 'position' => 'Latitude: 123, Longitude: 456', // Replace with the desired position information

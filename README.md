@@ -3,7 +3,6 @@
     [] -> Sipariş Takip
     [] -> Profil Resmi
 
-[] -> Home Sayfasında Slider CRUD Eklenecek
 [] -> Home Sayfasına Ürünler Getirilecek
 
 ### ADMIN

@@ -8,15 +8,15 @@
                         <a href="#"><img src="{{asset('home')}}/img/footer-logo.png" alt=""></a>
                     </div>
                     <ul>
-                        <li>Address: 60-49 Road 11378 New York</li>
-                        <li>Phone: +65 11.188.888</li>
-                        <li>Email: hello.colorlib@gmail.com</li>
+                        <li>Address: {{$settings->address}}</li>
+                        <li>Phone: {{$settings->phone}}</li>
+                        <li>Email: {{$settings->email}}</li>
                     </ul>
                     <div class="footer-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#" class="pt-2"><i class="fa fa-facebook "></i></a>
+                        <a href="#" class="pt-2"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="pt-2"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="pt-2"><i class="fa fa-pinterest"></i></a>
                     </div>
                 </div>
             </div>

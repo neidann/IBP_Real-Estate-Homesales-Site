@@ -35,4 +35,6 @@
         </div>
     </section>
     <!-- Hero Section End -->
+
+    @include('home.components.products-pane')
 @endsection

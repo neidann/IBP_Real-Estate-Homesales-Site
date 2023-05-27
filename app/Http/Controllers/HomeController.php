@@ -14,7 +14,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view("home.index");
+        $properties = Property::limit(5)->get();
+        return view("home.index",
+        [
+            'properties' => $properties
+        ]);
     }
 
 
