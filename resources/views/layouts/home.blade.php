@@ -1,6 +1,7 @@
 <html>
 <!--Head-->
 @include("home._head")
+
 </html>
 <body>
 <!-- Page Preloder -->
@@ -21,4 +22,5 @@
 @show
 <!--Scripts-->
 @include("home._scripts")
+@livewireScripts
 </body>
