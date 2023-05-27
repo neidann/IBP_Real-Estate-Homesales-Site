@@ -4,21 +4,17 @@
        <div class="row">
            <div class="col-lg-6">
                <div class="product-pic-zoom">
-                   <img class="product-big-img" src="{{asset('home')}}/img/product-single/product-1.jpg" alt="">
+                   <img class="product-big-img" src="{{Storage::url($property->card_img)}}" alt="">
                    <div class="zoom-icon">
                        <i class="fa fa-search-plus"></i>
                    </div>
                </div>
                <div class="product-thumbs">
                    <div class="product-thumbs-track ps-slider owl-carousel">
-                       <div class="pt active" data-imgbigurl="{{asset('home')}}/img/product-single/product-1.jpg"><img
-                               src="{{asset('home')}}/img/product-single/product-1.jpg" alt=""></div>
-                       <div class="pt" data-imgbigurl="{{asset('home')}}/img/product-single/product-2.jpg"><img
-                               src="{{asset('home')}}/img/product-single/product-2.jpg" alt=""></div>
-                       <div class="pt" data-imgbigurl="{{asset('home')}}/img/product-single/product-3.jpg"><img
-                               src="{{asset('home')}}/img/product-single/product-3.jpg" alt=""></div>
-                       <div class="pt" data-imgbigurl="{{asset('home')}}/img/product-single/product-3.jpg"><img
-                               src="{{asset('home')}}/img/product-single/product-3.jpg" alt=""></div>
+                       @foreach($property->gallery as $img)
+                       <div class="pt active" data-imgbigurl="{{Storage::url($img->image)}}"><img
+                               src="{{Storage::url($img->image)}}" alt=""></div>
+                       @endforeach
                    </div>
                </div>
            </div>

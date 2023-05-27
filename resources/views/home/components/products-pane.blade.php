@@ -19,14 +19,12 @@
                                 <i class="icon_heart_alt"></i>
                             </div>
                             <ul>
-                                <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                <li class="quick-view"><a href="#">+ Quick View</a></li>
-                                <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                <li class="quick-view"><a href="{{route('home.properties_detail',['id' => $property->id])}}">+ Quick View</a></li>
                             </ul>
                         </div>
                         <div class="pi-text">
                             <div class="catagory-name">{{$property->category->title}}</div>
-                            <a href="#">
+                            <a href="{{route('home.properties_detail',['id' => $property->id])}}">
                                 <h5>{{$property->title}}</h5>
                             </a>
                             <div class="product-price">
