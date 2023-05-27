@@ -3,31 +3,28 @@
     <!-- Hero Section Begin -->
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" data-setbg="{{asset('home')}}/img/hero-1.jpg">
+            <div class="single-hero-items set-bg" data-setbg="{{asset('home')}}/img/slider1.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                            <span>House, Villa</span>
+                            <h1>REAL ESTATE</h1>
+
+                            <a href="#" class="primary-btn">BUY HOUSE ONLİNE!</a>
                         </div>
                     </div>
                     <div class="off-card">
-                        <h2>Sale <span>50%</span></h2>
+                        <h2>Sale <span>49%</span></h2>
                     </div>
                 </div>
             </div>
-            <div class="single-hero-items set-bg" data-setbg="{{asset('home')}}/img/hero-2.jpg">
+            <div class="single-hero-items set-bg" data-setbg="{{asset('home')}}/img/slider2.png" style="object-fit: contain">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
-                            <span>Bag,kids</span>
-                            <h1>Black friday</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                            <span>Special Design, Architecture</span>
+                            <h1>Modern Houses</h1>
+                            <a href="#" class="primary-btn">BUY HOUSE ONLİNE!</a>
                         </div>
                     </div>
                     <div class="off-card">

@@ -76,6 +76,13 @@ Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(fun
             Route::post("/update/{id}","update")->name("update");
             Route::post("/delete/{id}","destroy")->name("destroy");
         });
+        Route::prefix("/order")->name("order.")->controller(OrderController::class)->group(function(){
+            Route::get("/","index")->name("index");
+            Route::get("/show/{id}","admin_show")->name("show");
+            Route::get("/edit/{id}","edit")->name("edit");
+            Route::put("/update/{id}","update")->name("update");
+            Route::delete("/delete/{id}","destroy")->name("destroy");
+        });
 
         Route::prefix("/contact")->name("contact.")->controller(ContactMessageController::class)->group(function(){
             Route::get("/","index")->name("index");
@@ -86,6 +93,7 @@ Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(fun
         Route::prefix("/users")->name("user.")->controller(UserController::class)->group(function(){
             Route::get("/","index")->name("index");
             Route::get("/edit/{id}","edit")->name("edit");
+            Route::get("/show/{id}","show")->name("show");
             Route::post("/update/{id}","update")->name("update");
             Route::delete("/delete/{id}","destroy")->name("destroy");
         });

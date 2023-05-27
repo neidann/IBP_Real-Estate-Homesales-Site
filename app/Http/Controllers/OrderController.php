@@ -17,7 +17,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+        return view('admin.order.index',[
+            'orders' => $orders
+        ]);
     }
 
     /**
@@ -97,24 +100,33 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Order $order)
+    public function admin_show($id)
     {
-        //
+        $order = Order::find($id);
+        return view('admin.order.show',[
+            'order' => $order
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateOrderRequest $request, Order $order)
+    public function update($id)
     {
-        //
+        $order = Order::find($id);
+        $order->status = "COMPLETED";
+        $order->save();
+        return redirect()->back()->with("success","Updated Successfully!");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order->delete();
+        OrderItem::where('user_id',Auth::user()->id)->where('order_id',$id)->delete();
+        return redirect()->route("admin.order.index")->with("success","DELETED GRACEFULLY!");
     }
 }
