@@ -3,7 +3,7 @@
     <!-- Shopping Cart Section Begin -->
     <section class="checkout-section spad">
         <div class="container">
-            <form action="#" class="checkout-form">
+            <div class="checkout-form">
                 <div class="row">
                     <div class="col-lg-6">
                         <h4>Biling Details</h4>
@@ -31,7 +31,6 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-
                         <div class="place-order">
                             <h4>Your Order</h4>
                             <div class="order-total">
@@ -46,13 +45,16 @@
                                 </ul>
                                 <h6 class="my-4">Total Price With Tax: {{$total}}₺</h6>
                                 <div class="order-btn">
-                                    <button type="submit" class="site-btn place-btn">Place Order</button>
+                                    <form method="post" action="{{route('order.store')}}">
+                                        @csrf
+                                        <button type="submit" class="site-btn place-btn">Place Order</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
     <!-- Shopping Cart Section End -->

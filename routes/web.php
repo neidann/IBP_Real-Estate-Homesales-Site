@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -92,6 +93,8 @@ Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(fun
 
 # User Routes - IF logged in
 Route::middleware(['auth','cart'])->group(function () {
+    Route::post("/order/create",[OrderController::class,"store"])->name("order.store");
+    Route::get("/order/success",[OrderController::class,"order_success"])->name("order.success");
     Route::get("/cart",[CartController::class,"index"])->name("cart.index");
     Route::get("/cart/checkout",[CartController::class,"checkout"])->name("cart.checkout");
     Route::get("/cart/checkout/completed",[CartController::class,"checkout_completed"])->name("cart.checkout.completed");
@@ -99,6 +102,7 @@ Route::middleware(['auth','cart'])->group(function () {
     Route::delete("/cart/delete",[CartController::class,"cart_delete"])->name("cart.delete");
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile/order/{id}/detail',[OrderController::class,"show"])->name("order.show");
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

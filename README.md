@@ -1,5 +1,3 @@
-[] -> Ödeme Yapa tıkladıktan sonra gidilecek Address Sayfası
-[] -> Cart Bilgilerini Girme 
 [] -> Onaylanma Durumu
 [] -> Profil Yönetimi
     [] -> Sipariş Takip

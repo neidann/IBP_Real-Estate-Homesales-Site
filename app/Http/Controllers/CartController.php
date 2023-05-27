@@ -32,7 +32,6 @@ class CartController extends Controller
         ]);
     }
 
-
     public function checkout()
     {
 
@@ -45,9 +44,7 @@ class CartController extends Controller
         return view('home.cart.address');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function cart_store(Request $req)
     {
         $cartItem = new Cart();
@@ -57,28 +54,6 @@ class CartController extends Controller
 
         return redirect()->back()->with("success","Added to Cart!");
 
-    }
-
-
-    public function checkout_address()
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Cart $cart)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateCartRequest $request, Cart $cart)
-    {
-        //
     }
 
     /**
