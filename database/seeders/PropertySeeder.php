@@ -16,7 +16,7 @@ class PropertySeeder extends Seeder
         for ($i = 1; $i <= 10; $i++) {
             Property::create([
                 'user_id' => 1, // Replace with the desired user ID
-                'category_id' => 1, // Replace with the desired category ID
+                'category_id' => rand(1,4), // Replace with the desired category ID
                 'title' => 'Property ' . $i,
                 'description' => 'Description for Property ' . $i,
                 'card_img' => "public/property_images/g2.png", // Replace with the desired image name

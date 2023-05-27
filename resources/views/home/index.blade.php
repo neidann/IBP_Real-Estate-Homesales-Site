@@ -36,5 +36,11 @@
     </section>
     <!-- Hero Section End -->
 
-    @include('home.components.products-pane')
+    @foreach($categories as $category)
+        @if($loop->iteration%2===0)
+            @include('home.components.products-pane',['properties' => $category->properties, 'category' => $category->title])
+        @else
+            @include('home.components.products-pane2',['properties' => $category->properties, 'category' => $category->title])
+        @endif
+    @endforeach
 @endsection

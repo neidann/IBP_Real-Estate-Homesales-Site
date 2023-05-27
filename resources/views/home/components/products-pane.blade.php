@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="product-large set-bg bg-warning" data-setbg="{{asset('home')}}/img/pane.png">
-                    <h2>Triplex</h2>
+                    <h2>{{$category}}</h2>
                     <a href="#">Discover More</a>
                 </div>
             </div>
