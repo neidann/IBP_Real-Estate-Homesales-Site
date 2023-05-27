@@ -32,7 +32,11 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $announcement = new Announcement();
+        $announcement->title = $request->title;
+        $announcement->body = $request->body;
+        $announcement->save();
+        return redirect()->back()->with("succes","Created gracefully");
     }
 
     /**
@@ -54,9 +58,12 @@ class AnnouncementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Announcement $announcement)
+    public function update(Request $req, $id)
     {
-        //
+        $announcement = Announcement::find($id);
+        $announcement->status = $req->status;
+        $announcement->save();
+        return redirect()->back();
     }
 
     /**

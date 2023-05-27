@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 # Guest & User Routes
-Route::middleware("cart")->name("home.")->group(function (){
+Route::middleware(["cart","announcements"])->name("home.")->group(function (){
         Route::get("/",[HomeController::class,"index"])->name("index");
         Route::get("/properties",[HomeController::class,"properties"])->name("properties");
         Route::get("/properties/detail/{id}",[HomeController::class,"properties_detail"])->name("properties_detail");
@@ -24,6 +24,7 @@ Route::middleware("cart")->name("home.")->group(function (){
         Route::post("/contact",[HomeController::class,"contact_message"])->name("contact_message");
         Route::get("/about",[HomeController::class,"about"])->name("about");
         Route::get("/references",[HomeController::class,"references"])->name("references");
+        Route::get("/announcements",[HomeController::class,"announcements"])->name("announcements");
         Route::get("/c/{id}/{slug}",[HomeController::class,"category_property"])->name("category.property");
 });
 
@@ -64,8 +65,8 @@ Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(fun
             Route::post("/store","store")->name("store");
             Route::get("/edit/{id}","edit")->name("edit");
             Route::get("/show/{id}","show")->name("show");
-            Route::post("/update/{id}","update")->name("update");
-            Route::post("/delete/{id}","destroy")->name("destroy");
+            Route::put("/update/{id}","update")->name("update");
+            Route::delete("/delete/{id}","destroy")->name("destroy");
         });
         Route::prefix("/slider")->name("slider.")->controller(SliderController::class)->group(function(){
             Route::get("/","index")->name("index");
@@ -100,7 +101,7 @@ Route::middleware(["auth","admin"])->prefix("/admin")->name("admin.")->group(fun
 });
 
 # User Routes - IF logged in
-Route::middleware(['auth','cart'])->group(function () {
+Route::middleware(['auth','cart',"announcements"])->group(function () {
     Route::post("/order/create",[OrderController::class,"store"])->name("order.store");
     Route::get("/order/success",[OrderController::class,"order_success"])->name("order.success");
     Route::get("/cart",[CartController::class,"index"])->name("cart.index");

@@ -9,23 +9,17 @@
         <table class="table table-bordered table-dark text-white table-hover">
             <thead>
             <tr>
-                <th>ID</th>
                 <th>Title</th>
                 <th>Body</th>
-                <th>Created At</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             @foreach($announcements as $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
                     <td>{{ $item->title }}</td>
                     <td style="width:600px;">{{ $item->body}}</td>
-                    <td>{{ $item->created_at }}</td>
                     <td>
-                        <a href="{{route('admin.announcement.show',['id' => $item->id])}}" class="btn btn-primary">  <i class="fas fa-eye"></i></a>
-                        <a href="{{route('admin.announcement.edit',['id' => $item->id])}}" class="btn btn-info"> <i class="fas fa-edit"></i> </a>
                         <form action="{{ route('admin.announcement.destroy', ['id' => $item->id]) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')

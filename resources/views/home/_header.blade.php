@@ -52,9 +52,9 @@
                 <div class="col-lg-3 text-right col-md-3">
                     <ul class="nav-right">
                         <li class="heart-icon">
-                            <a href="#">
+                            <a href="{{route('home.announcements')}}">
                                 <i class="fa fa-bell"></i>
-                                <span>1</span>
+                                <span>{{count($announcements)}}</span>
                             </a>
                         </li>
                         <li class="cart-icon">
