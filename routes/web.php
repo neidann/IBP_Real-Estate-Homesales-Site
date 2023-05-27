@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 # Guest & User Routes
-Route::name("home.")->group(function (){
+Route::middleware("cart")->name("home.")->group(function (){
         Route::get("/",[HomeController::class,"index"])->name("index");
         Route::get("/properties",[HomeController::class,"properties"])->name("properties");
         Route::get("/properties/detail/{id}",[HomeController::class,"properties_detail"])->name("properties_detail");

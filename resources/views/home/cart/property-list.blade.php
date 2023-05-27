@@ -154,9 +154,7 @@
                                         <div class="pi-pic">
                                             <img src="{{Storage::url($property->card_img)}}" alt="">
                                             <div class="sale pp-sale">Sale</div>
-                                            <div class="icon">
-                                                <i class="icon_heart_alt"></i>
-                                            </div>
+
                                             <ul>
                                                 <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a>
                                                 </li>

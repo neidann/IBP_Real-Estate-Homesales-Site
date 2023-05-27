@@ -15,9 +15,7 @@
                         <div class="pi-pic">
                             <img src="{{Storage::url($property->card_img)}}" alt="{{$property->img_text}}">
                             <div class="sale">Sale</div>
-                            <div class="icon">
-                                <i class="icon_heart_alt"></i>
-                            </div>
+
                             <ul>
                                 <li class="quick-view"><a href="{{route('home.properties_detail',['id' => $property->id])}}">+ Quick View</a></li>
                             </ul>

@@ -53,56 +53,41 @@
                     <ul class="nav-right">
                         <li class="heart-icon">
                             <a href="#">
-                                <i class="icon_heart_alt"></i>
+                                <i class="fa fa-bell"></i>
                                 <span>1</span>
                             </a>
                         </li>
                         <li class="cart-icon">
                             <a href="{{route('cart.index')}}">
                                 <i class="icon_bag_alt"></i>
-                                <span>3</span>
+                                <span>{{count($userCart)}}</span>
                             </a>
                             <div class="cart-hover">
                                 <div class="select-items">
                                     <table>
                                         <tbody>
+                                        @foreach($userCart as $item)
                                         <tr>
-                                            <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
+                                            <td class="si-pic"><img src="{{Storage::url($item->property->card_img)}}" width="100" alt=""></td>
                                             <td class="si-text">
                                                 <div class="product-selected">
-                                                    <p>$60.00 x 1</p>
-                                                    <h6>Kabino Bedside Table</h6>
+                                                    <p>{{$item->property->low_price}}₺</p>
+                                                    <h6>{{$item->property->title}}</h6>
                                                 </div>
                                             </td>
-                                            <td class="si-close">
-                                                <i class="ti-close"></i>
-                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                            <td class="si-text">
-                                                <div class="product-selected">
-                                                    <p>$60.00 x 1</p>
-                                                    <h6>Kabino Bedside Table</h6>
-                                                </div>
-                                            </td>
-                                            <td class="si-close">
-                                                <i class="ti-close"></i>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
-                                </div>
-                                <div class="select-total">
-                                    <span>total:</span>
-                                    <h5>$120.00</h5>
                                 </div>
                                 <div class="select-button">
                                     <a href="{{route('cart.index')}}" class="primary-btn checkout-btn">OPEN CART</a>
                                 </div>
                             </div>
                         </li>
-                        <li class="cart-price">$150.00</li>
+                        @if($userCartTotalPrice>0)
+                        <li class="cart-price">{{$userCartTotalPrice}}₺</li>
+                        @endif
                     </ul>
                 </div>
             </div>

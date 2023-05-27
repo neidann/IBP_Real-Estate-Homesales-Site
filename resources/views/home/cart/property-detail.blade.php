@@ -23,7 +23,6 @@
                    <div class="pd-title">
                        <span>{{$property->category->title}}</span>
                        <h3>{{$property->title}}</h3>
-                       <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                    </div>
                    <div class="pd-desc">
                        <p>{{$property->description}}</p>

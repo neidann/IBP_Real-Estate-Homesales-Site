@@ -15,11 +15,11 @@
         </div>
         <nav class="nav-menu mobile-menu">
             <ul>
-                <li class="active"><a href="{{route('home.index')}}">Home</a></li>
-                <li><a href="{{route('home.properties')}}">Properties</a></li>
-                <li><a href="{{route('home.contact')}}">Contact</a></li>
-                <li><a href="{{route('home.references')}}">References</a></li>
-                <li><a href="{{route('home.about')}}">About</a></li>
+                <li class="{{Route::currentRouteName()== 'home.index' ? 'active' : '' }}"><a href="{{route('home.index')}}">Home</a></li>
+                <li class="{{Route::currentRouteName()== 'home.properties' ? 'active' : '' }}"><a href="{{route('home.properties')}}">Properties</a></li>
+                <li class="{{Route::currentRouteName()== 'home.contact' ? 'active' : '' }}" ><a href="{{route('home.contact')}}">Contact</a></li>
+                <li class="{{Route::currentRouteName()== 'home.references' ? 'active' : '' }}" ><a href="{{route('home.references')}}">References</a></li>
+                <li class="{{Route::currentRouteName()== 'home.about' ? 'active' : '' }}" ><a href="{{route('home.about')}}">About</a></li>
                <!-- <li><a href="#">Pages</a>
                     <ul class="dropdown">
                         <li><a href="./blog-details.html">Blog Details</a></li>

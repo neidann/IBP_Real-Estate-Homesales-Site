@@ -20,6 +20,10 @@ class UserCartMiddleware
     {
         if (Auth::check()) {
             $userCart = Cart::where('user_id', Auth::user()->id)->get();
+            $totalPrice = $userCart->sum(function($userCartItem){
+                return $userCartItem->property->low_price;
+            });
+            View::share('userCartTotalPrice',$totalPrice);
             View::share('userCart', $userCart);
         }
         return $next($request);

@@ -1,17 +1,14 @@
-[] -> Onaylanma Durumu
-[] -> Profil Yönetimi
-    [] -> Sipariş Takip
-    [] -> Profil Resmi
-
-[] -> Home Sayfasına Ürünler Getirilecek
+[] -> Cart İconunun üzerine gelindiğinde çıkan yapıyı düzenleme
+[] -> Favourites yapısını kaldırma - Tamamiyle
 
 ### ADMIN
+[] -> Admin Panel Slider İçermeli
+[] -> Admin - Message - User 
+[] -> Profil Fotosu Kaldırılacak
 [] -> Dashboard Düzenleme & İstatistikleri Getirme
 [] -> Create, Update gibi sayfalara Back tuşu eklenecek. * mütün menülere *
-[] -> Order Management Alanı Eklenecek
-[] -> Contact Messages Yönetimi Tamamlanacak
 [] -> Settings Yönetimi Tamamlanacak
-[] -> Announcements Tamamlanacak
+[] -> Announcements Tamamlanacak * Notification Olarak Gelecek * 
 [] -> User Management
 
 * [] -> Site Dili İngilizce Yapılacak
