@@ -6,8 +6,8 @@
 [COMPLETED] -> Settings Yönetimi Tamamlanacak
 [COMPLETED] -> Announcements Tamamlanacak * Notification Olarak Gelecek *
 [COMPLETED] -> Create, Update gibi sayfalara Back tuşu eklenecek. * mütün menülere *
+[COMPLETED] -> User Management
 
-[] -> User Management
 [] -> Global Search Eklenecek
 * [] -> Site Dili İngilizce Yapılacak
 

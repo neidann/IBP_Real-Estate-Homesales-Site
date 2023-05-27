@@ -37,5 +37,6 @@
 @include('admin._scripts')
 @section("bottom-scripts")
 @show
+@livewireScripts
 </body>
 </html>
