@@ -1,5 +1,3 @@
-[] -> Cart İconunun üzerine gelindiğinde çıkan yapıyı düzenleme
-[] -> Favourites yapısını kaldırma - Tamamiyle
 
 ### ADMIN
 [] -> Admin Panel Slider İçermeli

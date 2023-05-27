@@ -3,9 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\ContactMessage;
+use App\Models\Order;
+use App\Models\Property;
 use App\Models\Settings;
+use App\Models\User;
 use Hamcrest\Core\Set;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AdminController extends Controller
@@ -15,7 +21,19 @@ class AdminController extends Controller
      */
     public function index() : View
     {
-        return view("admin.dashboard");
+        $users = User::count();
+        $orders = Order::count();
+        $messages = ContactMessage::count();
+        $properties = Property::count();
+        $categories = Category::count();
+
+        return view("admin.dashboard",[
+            'users' => $users,
+            'orders' => $orders,
+            'messages' => $messages,
+            'properties' => $properties,
+            'categories' => $categories
+        ]);
     }
 
     /**
