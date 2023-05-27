@@ -1,5 +1,8 @@
 @extends("layouts.admin")
 @section("content")
+    <div class="row">
+        <a href="{{route('admin.order.index')}}" type="button" class="btn btn-block bg-gradient-primary btn-sm w-25 my-3">Back To Orders</a>
+    </div>
     <table class="table table-bordered table-dark table-hover">
         <tr>
             <th>ID</th>

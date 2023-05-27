@@ -13,7 +13,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index');
+        $users = User::all();
+        return view('admin.user.index',[
+            'users' => $users
+        ]);
     }
 
     /**
@@ -56,7 +59,10 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::find($id);
+        $user->role = $request->role;
+        $user->save();
+        return redirect()->back()->with("success","Role Updated");
     }
 
     /**

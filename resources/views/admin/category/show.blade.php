@@ -1,5 +1,8 @@
 @extends("layouts.admin")
 @section("content")
+    <div class="row">
+        <a href="{{route('admin.category.index')}}" type="button" class="btn btn-block bg-gradient-primary btn-sm w-25 my-3">Back To Categories</a>
+    </div>
     <table class="table table-bordered table-dark text-white table-hover">
         <tbody>
         <tr>

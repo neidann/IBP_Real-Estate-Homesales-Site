@@ -7,6 +7,9 @@
     </style>
     <div class="container-fluid">
         <div class="row">
+            <a href="{{route('admin.property.index')}}" type="button" class="btn btn-block bg-gradient-primary btn-sm w-25 my-3">Back To Properties</a>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <table class="table table-bordered table-dark">
                     <tbody>

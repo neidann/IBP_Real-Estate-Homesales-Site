@@ -1,6 +1,9 @@
 @extends("layouts.admin")
 @section("content")
     <div class="container-fluid">
+        <div class="row">
+            <a href="{{route('admin.property.index')}}" type="button" class="btn btn-block bg-gradient-primary btn-sm w-25 my-3">Back To Properties</a>
+        </div>
         <div class="row bg-dark p-4 rounded">
             <form class="w-100" action="{{ route('admin.property.update', $property->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
