@@ -1,38 +1,33 @@
 @extends("layouts.home")
 @section("content")
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2>About Fashi</h2>
-                <p>Welcome to Fashi, your one-stop destination for all your fashion needs. We are dedicated to providing you with the latest trends, high-quality products, and exceptional customer service.</p>
-                <p>With Fashi, you can explore a wide range of clothing, accessories, and footwear for men, women, and kids. Our collection is curated from top fashion brands, ensuring that you stay stylish and fashionable at all times.</p>
-                <p>At Fashi, we believe that fashion is not just about clothing; it's a reflection of your personality and individuality. That's why we strive to offer diverse styles and designs to cater to different tastes and preferences.</p>
-            </div>
-            <div class="col-lg-6">
-                <img src="about-image.jpg" alt="About Fashi" class="img-fluid">
-            </div>
-        </div>
+        <h1 class="mt-5">About Real Estate House Sales</h1>
+        <hr>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Our Mission</h3>
-                <p>At Fashi, our mission is to empower individuals to express themselves through fashion. We aim to provide a seamless shopping experience, exceptional product quality, and personalized customer support.</p>
-                <p>We constantly stay updated with the latest fashion trends and collaborate with renowned designers to bring you the most stylish and innovative products. Our goal is to inspire confidence and empower you to embrace your unique style.</p>
-            </div>
-        </div>
+        <article>
+            <p>Welcome to Real Estate House Sales, your one-stop destination for buying and selling houses. We are
+                dedicated to providing the best platform for real estate transactions, connecting buyers and sellers
+                all around the world.</p>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Why Choose Fashi?</h3>
-                <ul>
-                    <li>Wide selection of fashionable clothing, accessories, and footwear</li>
-                    <li>High-quality products from top fashion brands</li>
-                    <li>Responsive and user-friendly website for easy navigation</li>
-                    <li>Secure payment options for a hassle-free shopping experience</li>
-                    <li>Fast and reliable delivery to your doorstep</li>
-                    <li>Excellent customer service to address any queries or concerns</li>
-                </ul>
-            </div>
-        </div>
+            <p>At Real Estate House Sales, we understand the importance of finding your dream home or getting the best
+                price for your property. With our user-friendly interface and comprehensive listing features, we make
+                the process of buying or selling a house seamless and efficient.</p>
+
+            <p>Our platform offers a wide range of properties, including apartments, houses, villas, and more. You can
+                easily browse through our extensive collection of listings, filtering by location, price range,
+                property type, and other criteria to find exactly what you're looking for.</p>
+
+            <p>We also provide tools and resources to help sellers showcase their properties effectively. With detailed
+                property descriptions, high-quality images, and virtual tours, you can attract potential buyers and
+                increase your chances of making a successful sale.</p>
+
+            <p>Our team of experienced real estate professionals is always ready to assist you. Whether you have
+                questions about a property, need guidance on the buying or selling process, or require any other
+                support, we're here to help. Feel free to reach out to our customer support team for personalized
+                assistance.</p>
+
+            <p>Join Real Estate House Sales today and experience the convenience and efficiency of buying or selling
+                houses online. Start your journey towards finding your dream home or making a successful sale with us.</p>
+        </article>
     </div>
 @endsection

@@ -14,19 +14,27 @@
             </div>
             <div class="ht-right">
                 @auth
+                    <div class="d-flex align-items-center justify-content-center">
                     <a href="{{route('profile.edit')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Profile</a>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button class="btn mt-3" type="submit"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                    </form>
+                    </div>
                 @else
                     <a href="{{route('login')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Login</a>
                     <a href="{{route('register')}}" class="login-panel mx-2"><i class="fa fa-user"></i>Register</a>
                 @endauth
-                <div class="lan-selector">
+                <div class="lan-selector d-flex">
                     <select class="language_drop" name="countries" id="countries" style="width:300px;">
                         <option value='yt' data-image="{{asset('home')}}/img/flag-1.jpg" data-imagecss="flag yt"
                                 data-title="English">English</option>
                         <option value='yu' data-image="{{asset('home')}}/img/flag-2.jpg" data-imagecss="flag yu"
                                 data-title="Bangladesh">German </option>
                     </select>
+
                 </div>
+
                 <div class="top-social">
                     <a href="#"><i class="ti-facebook"></i></a>
                     <a href="#"><i class="ti-twitter-alt"></i></a>
@@ -50,6 +58,7 @@
                     @livewire('home-search')
                 </div>
                 <div class="col-lg-3 text-right col-md-3">
+
                     <ul class="nav-right">
                         <li class="heart-icon">
                             <a href="{{route('home.announcements')}}">
@@ -57,10 +66,13 @@
                                 <span>{{count($announcements)}}</span>
                             </a>
                         </li>
+                        @if($userCart !==null)
                         <li class="cart-icon">
                             <a href="{{route('cart.index')}}">
                                 <i class="icon_bag_alt"></i>
-                                <span>{{count($userCart)}}</span>
+                                @if($userCart !==null)
+                                    <span>{{count($userCart)}}</span>
+                                @endif
                             </a>
                             <div class="cart-hover">
                                 <div class="select-items">
@@ -85,10 +97,13 @@
                                 </div>
                             </div>
                         </li>
+
                         @if($userCartTotalPrice>0)
                         <li class="cart-price">{{$userCartTotalPrice}}₺</li>
                         @endif
+                        @endif
                     </ul>
+
                 </div>
             </div>
         </div>

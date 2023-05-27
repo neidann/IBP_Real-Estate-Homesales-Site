@@ -25,6 +25,9 @@ class UserCartMiddleware
             });
             View::share('userCartTotalPrice',$totalPrice);
             View::share('userCart', $userCart);
+        }else{
+            $userCart = null;
+            View::share('userCart', $userCart);
         }
         return $next($request);
     }

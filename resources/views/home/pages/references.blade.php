@@ -1,6 +1,6 @@
 @extends("layouts.home")
 @section("content")
-    <div class="container">
+    <div class="container p-5">
         <div class="row">
             <div class="col-lg-12">
                 <h2>Customer References</h2>
@@ -8,7 +8,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
