@@ -20,8 +20,8 @@
                                     <h5>{{$property->title}}</h5>
                                 </a>
                                 <div class="product-price">
-                                    {{$property->low_price}}
-                                    <span> {{$property->high_price}}</span>
+                                    {{$property->low_price}}₺
+                                    <span> {{$property->high_price}}₺</span>
                                 </div>
                             </div>
                         </div>

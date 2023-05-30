@@ -40,14 +40,24 @@
                        <li><span>CATEGORIES</span>:{{$property->category->title}} </li>
                    </ul>
                    <div class="pd-share">
-                       <div class="p-code">Sku : 00012</div>
+                       <div class="p-code">Details</div>
                        <div class="pd-social">
                            <a href="#"><i class="ti-facebook"></i></a>
                            <a href="#"><i class="ti-twitter-alt"></i></a>
                            <a href="#"><i class="ti-linkedin"></i></a>
                        </div>
                    </div>
+
+                   <ul class="list-group">
+                       <li class="list-group-item">Sitting Rooms: {{$property->sittingrooms}}</li>
+                       <li class="list-group-item">Baths : {{$property->baths}}</li>
+                       <li class="list-group-item">Bedrooms : {{$property->bedrooms}}</li>
+                   </ul>
                </div>
+           </div>
+           <div class="col-md-6">
+               <h3>HARİTA</h3>
+               {!! $property->position !!}
            </div>
        </div>
    </div>
